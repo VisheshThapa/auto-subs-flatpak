@@ -1,8 +1,0 @@
-[Desktop Entry]
-Categories=AudioVideo;Audio;Utility;
-Comment=Transcribe and diarize audio files
-Exec=flatpak run org.autosubs.AutoSubs
-Icon=autosubs
-Name=AutoSubs
-Terminal=false
-Type=Application
