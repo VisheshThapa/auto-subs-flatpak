@@ -1,0 +1,39 @@
+id: org.autosubs.AutoSubs
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+command: autosubs
+
+finish-args:
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --filesystem=home
+  - --env=XDG_RUNTIME_DIR=/run/user/1000
+  - --env=GDK_BACKEND=x11
+  - --env=LIBGL_ALWAYS_SOFTWARE=1
+  - --talk-name=org.freedesktop.Flatpak
+
+modules:
+  - name: auto-subs
+    buildsystem: simple
+    build-commands:
+      # Extract the .deb
+      - ar x AutoSubs-linux-x86_64.deb
+      - tar -xzf data.tar.gz
+
+      # Install the binary
+      - install -Dm755 usr/bin/autosubs /app/bin/autosubs
+
+      # Install the .desktop file
+      - install -Dm644 AutoSubs.desktop /app/share/applications/AutoSubs.desktop
+
+      # Copy the app icon if available
+      - install -Dm644 usr/share/icons/hicolor/128x128/apps/autosubs.png /app/share/icons/hicolor/128x128/apps/autosubs.png
+
+    sources:
+      - type: file
+        path: AutoSubs-linux-x86_64.deb
+      - type: file
+        path: AutoSubs.desktop
+

@@ -1,0 +1,5 @@
+[Runtime]
+name=org.autosubs.AutoSubs.Debug
+
+[ExtensionOf]
+ref=app/org.autosubs.AutoSubs/x86_64/master

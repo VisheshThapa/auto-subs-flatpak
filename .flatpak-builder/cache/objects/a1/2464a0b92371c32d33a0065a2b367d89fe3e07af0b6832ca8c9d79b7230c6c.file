@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;Utility;
+Comment=Transcribe and diarize audio files
+Exec=org.autosubs.AutoSubs
+StartupWMClass=autosubs
+Icon=autosubs
+Name=AutoSubs
+Terminal=false
+Type=Application

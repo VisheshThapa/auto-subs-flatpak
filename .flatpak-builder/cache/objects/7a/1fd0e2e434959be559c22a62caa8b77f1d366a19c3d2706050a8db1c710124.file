@@ -1,0 +1,26 @@
+[Application]
+name=org.autosubs.AutoSubs
+runtime=org.gnome.Platform/x86_64/48
+sdk=org.gnome.Sdk/x86_64/48
+command=autosubs
+
+[Context]
+shared=network;
+sockets=x11;wayland;
+filesystems=home;
+
+[Session Bus Policy]
+org.freedesktop.Flatpak=talk
+
+[Environment]
+LIBGL_ALWAYS_SOFTWARE=1
+XDG_RUNTIME_DIR=/run/user/1000
+GDK_BACKEND=x11
+
+[Extension org.autosubs.AutoSubs.Debug]
+directory=lib/debug
+autodelete=true
+no-autodownload=true
+
+[Build]
+built-extensions=org.autosubs.AutoSubs.Debug;
